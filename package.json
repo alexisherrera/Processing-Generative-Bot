@@ -1,0 +1,21 @@
+{
+  "name": "bot-for-processing",
+  "version": "1.0.0",
+  "description": "twitter bot that creates generative art",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "twitter", "generative art"
+  ],
+  "author": "alexis herrera",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parse": "^1.2.0",
+    "csv-parser": "^1.11.0",
+    "get-met-url": "^0.1.2",
+    "stream-transform": "^0.1.2",
+    "twit": "^2.2.5"
+  }
+}
