@@ -15,7 +15,7 @@ var T = new Twit({
 tweet();
 
 //tweet every 20 minutes
-setInterval(tweet, 1000 * 60 * 20)
+setInterval(tweet, 1000 * 60 * 1)
 
 function tweet() {
   exec(commands.simpleP, function() {
