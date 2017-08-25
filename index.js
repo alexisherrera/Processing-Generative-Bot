@@ -1,9 +1,13 @@
-var Twit = require('twit');
+var fs = require('fs');
 var exec = require('child_process').exec;
+var Twit = require('twit');
 var commands = require('./config/processingCommands.js')
 var config = require('./config/config.js');
-var tweet = require('./tweeting/tweet.js')
+var tweetF = require('./tweeting/tweet.js')
 
+var globalCount = 0;
+
+console.log(tweetF)
 //access keys from config file to protect keys
 var T = new Twit({
   consumer_key: config.consumer_key,
@@ -13,20 +17,18 @@ var T = new Twit({
 });
 
 exec(commands.simpleP, function() {
+  var filename = 'processing/output.png'
+  var parameters = {
+    encoding: 'base64'
+  }
+  var content = fs.readFileSync(filename, parameters);
+
+  var tweetData = {
+    media_data: content
+  }
+
+  tweetF(tweetData, T)
+
+
   console.log('print');
 })
-
-var params = {
-  q: 'hype',
-  count: 2
-}
-
-T.get('search/tweets', params, gotData);
-
-function gotData(err, data, response) {
-  //console.log(data.statuses)
-}
-
-var tweet = {
-  status: 'hey'
-}
