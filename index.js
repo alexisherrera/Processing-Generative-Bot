@@ -12,8 +12,10 @@ var T = new Twit({
   access_token: config.access_token,
   access_token_secret: config.access_token_secret
 });
-
 tweet();
+
+//tweet every 20 minutes
+setInterval(tweet, 1000 * 60 * 20)
 
 function tweet() {
   exec(commands.simpleP, function() {
@@ -26,8 +28,7 @@ function tweet() {
     var tweetData = {
       media_data: content
     }
-    //console.log(T);
-    tweetF.tweet(tweetData, T)
 
+    tweetF.tweet(tweetData, T)
   })
 }
