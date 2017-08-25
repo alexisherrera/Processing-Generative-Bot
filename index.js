@@ -1,4 +1,6 @@
 var Twit = require('twit');
+var exec = require('child_process').exec;
+var commands = require('./config/processingCommands.js')
 var config = require('./config/config.js');
 var tweet = require('./tweeting/tweet.js')
 
@@ -9,6 +11,10 @@ var T = new Twit({
   access_token: config.access_token,
   access_token_secret: config.access_token_secret
 });
+
+exec(commands.simpleP, function() {
+  console.log('print');
+})
 
 var params = {
   q: 'hype',
