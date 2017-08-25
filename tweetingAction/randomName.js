@@ -8,8 +8,6 @@ var f = function() {
   return text;
 }
 
-console.log(makeid());
-
 module.exports = {
   randomName: f
 }
