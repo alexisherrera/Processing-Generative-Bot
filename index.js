@@ -1,5 +1,6 @@
 var Twit = require('twit');
-var config = require('./config');
+var config = require('./config/config.js');
+var tweet = require('./tweeting/tweet.js')
 
 //access keys from config file to protect keys
 var T = new Twit({
